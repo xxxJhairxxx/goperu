@@ -1,15 +1,16 @@
 ---
+import HomeBanner from '../components/organisms/HomeBanner.astro';
 import Layout from '../layouts/Layout.astro';
 
 
 ---
 
 <Layout title="Es momento de involucranos">
+	<HomeBanner />
 	<main>
 		
 		<h1>
-			
-			<span class="text-gradient">Dile Adiós</span>
+			Dile Adiós
 			al Floro</h1>
 		<p class="instructions">
 			Nuevos rostros. Nuevas ideas. Nueva Política.
@@ -44,6 +45,7 @@ import Layout from '../layouts/Layout.astro';
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
+		margin-top: 5rem;
 		margin-bottom: 1em;
 	}
 	.text-gradient {
