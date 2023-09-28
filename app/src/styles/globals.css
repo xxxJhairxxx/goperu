@@ -1,0 +1,23 @@
+/* 
+@import "container.css"; 
+@import "icons.css";
+@import "scale.css";
+@import "./atoms";
+@import "./molecules";
+@import "./organisms";
+@import "./ui"; */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+}
+body {
+  @apply text-[1.5rem];
+  @screen laptop {
+    font-size: calc(1.9rem * var(--scale));
+  }
+}

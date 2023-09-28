@@ -10,8 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^5.0.0",
     "@fontsource-variable/rubik": "^5.0.14",
     "astro": "^3.1.4",
-    "swiper": "^10.3.0"
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.30",
+    "swiper": "^10.3.0",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "postcss-nesting": "^12.0.1"
   }
 }

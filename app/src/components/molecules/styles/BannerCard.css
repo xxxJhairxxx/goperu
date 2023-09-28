@@ -1,0 +1,21 @@
+.BannerCard{
+    height:40%;
+    background:red;
+    color:white;
+    padding:calc(3rem * var(--scale)) calc(2rem * var(--scale));
+    margin-left: auto;
+    width: calc(27rem * var(--scale));
+    margin-top: calc(-8rem * var(--scale));;
+    
+    h3{
+       @apply leading-[120%] font-[600];
+       font-size: calc(2rem * var(--scale));
+       margin-bottom: calc(1rem * var(--scale));
+    }
+    strong{
+        @apply font-[700];
+    }
+    p{
+        font-size: calc(1.8rem * var(--scale));
+    }
+}

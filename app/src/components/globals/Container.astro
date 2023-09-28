@@ -1,13 +1,14 @@
 ---
-
+const { class: className } = Astro.props;
 ---
 
-<div class="container">
+<div class={className}>
     <slot />
 </div>
 <style>
-	.container {
-		width: 70%;
+	div{
+		width: 60%;
         margin: auto;
+		
 	}
 </style>
