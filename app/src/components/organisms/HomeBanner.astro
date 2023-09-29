@@ -1,7 +1,7 @@
 ---
 import Container from "../globals/Container.astro";
 import BannerCard from "../molecules/BannerCard.astro";
-
+import BannerTitle from "../molecules/BannerTitle.astro";
 
 const images = [
     {
@@ -28,29 +28,28 @@ const images = [
 <div class="HomeBanner">
     <img class="image" src="https://adelanteperu.com/wp-content/uploads/2023/07/slider-3.jpeg" alt="">
    
+    <Container class="ctn">
+      <BannerCard/>
+      <BannerTitle/>
+    </Container>
     
   
 </div>
 
 <style>
     .HomeBanner{
+      @apply relative top-0 left-0 z-[-1];
+        margin-top: calc(-21.5rem * var(--scale));
+        padding-top: calc(12rem * var(--scale));
         width: 100%;
         height: 100vh;
-        position: absolute;
-        top:0;
-        left:0;
-        z-index: -1;
     }
 
     .image{
+      @apply absolute z-[-1] top-0 left-0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }
-
-    .Container{
-      background-color: red;
-      width: 100%;
     }
 
 </style>

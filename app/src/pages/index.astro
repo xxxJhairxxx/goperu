@@ -1,22 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Container from '../components/globals/Container.astro';
 import HomeBanner from '../components/organisms/HomeBanner.astro';
-import HomeMiddle from '../components/organisms/HomeMiddle.astro';
-import BannerCard from '../components/molecules/BannerCard.astro';
-import BannerTitle from '../components/molecules/BannerTitle.astro';
 import FraseCard from '../components/molecules/FraseCard.astro';
+import HomeMiddle from '../components/organisms/HomeMiddle.astro';
 
 ---
 
 <Layout title="Es momento de involucranos">
 	<HomeBanner />
-	<Container>
-		<BannerCard />
-		<BannerTitle />
-	</Container>
-
 		<FraseCard>
-			<HomeMiddle>
-
+	<HomeMiddle />
 </Layout>
+
+<style is:global>
+	@import "../styles/globals.css";
+	@import "../styles/scale.css";
+</style>

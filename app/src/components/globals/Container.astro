@@ -2,13 +2,13 @@
 const { class: className } = Astro.props;
 ---
 
-<div class={className}>
+<!-- <div class:list={[ 'hello goodbye', { world: true }, [ 'friend' ] ]}> -->
+<div class:list={[className]}>
     <slot />
 </div>
+
 <style>
-	div{
-		width: 60%;
-        margin: auto;
-		
-	}
+   div{
+    @apply  w-[60%] mx-auto ;
+   }
 </style>
