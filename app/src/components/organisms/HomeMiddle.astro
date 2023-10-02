@@ -2,28 +2,66 @@
 import Container from "../globals/Container.astro";
 
 ---
+<section >
 
-<div class="HomeMiddle">
-    <div class="text-black h-[50rem] bg-blue-500">
-        <h2 >
-            SE HABLA MUCHO PERO SE HACE MUY POCO
-        </h2>
-        <p>
-            Somos peruanos de diferentes provincias de nuestro Perú que como a ti 
-            la política actual nos tiene cansados. Únete
-             a nosotros para dar <strong>Soluciones con Valores</strong> a las principales
-              necesidades de millones de peruanos.
-        </p>
-    
-    </div>
-    <div class="text-black h-[50rem] bg-blue-500">
-        <p>Más peruanos se siguen sumando</p>
+    <Container class="flex gap-20  py-[15rem] ">
+        <div class="divleft" >
+            <h2 >
+                SE HABLA MUCHO PERO SE HACE MUY POCO
+            </h2>
+            <p>
+                Somos peruanos de diferentes provincias de nuestro Perú que como a ti 
+                la política actual nos tiene cansados. Únete
+                 a nosotros para dar <strong>Soluciones con Valores</strong> a las principales
+                  necesidades de millones de peruanos.
+            </p>
+        
+        </div>
+        <div  class="divright">
+            <p>Más peruanos se siguen sumando</p>
+            
+            <div class="">
+                <img src="./../../../public/images/numbers.png" alt="">
+            </div>
+        </div>
+    </Container>
 
-    </div>
-</div>
+</section>
+
+
 
 <style>
-    .HomeMiddle{
-     @apply text-black;
+
+section{
+  @apply  bg-[#F1F1F1];
+  margin-top:calc(-8rem *var(--scale));
+}
+
+    .divleft{
+        
+        width:  calc(41.7rem *var(--scale));
+        
     }
+
+    p{
+        @apply font-[400];
+    }
+
+    h2{
+        font-size:  calc(4.2rem *var(--scale));
+        font-weight: 700;
+        line-height: 100%;
+        margin-bottom: calc(2rem *var(--scale));
+        width:  calc(38rem *var(--scale));
+    }
+
+    p{
+        font-size:  calc(2.3rem *var(--scale));
+    }
+
+    .divright{
+        @apply flex flex-col items-center justify-center ;
+        padding: 0 calc(15rem *var(--scale));
+    }
+    
 </style>

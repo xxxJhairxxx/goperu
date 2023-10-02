@@ -1,11 +1,12 @@
 ---
 
 import '@fontsource-variable/rubik';
+import Container from '../globals/Container.astro';
 //interface Props {menu: string;}
 
 //const {menu} = Astro.props;
 ---
-
+<Container>
 <nav class="Navbar">
     <div class="logo">
         <img class="image" src="https://adelanteperu.com/wp-content/uploads/2023/07/logo-adp.svg" alt="">
@@ -20,6 +21,8 @@ import '@fontsource-variable/rubik';
         <li>CONTÁCTANOS</li>
     </ul>
 </nav>
+</Container>
+
 <style>
 	.Navbar {
 		list-style: none;

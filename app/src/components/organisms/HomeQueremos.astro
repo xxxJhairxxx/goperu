@@ -1,0 +1,37 @@
+---
+import Container from "../globals/Container.astro";
+---
+
+
+<section>
+
+    <Container>
+        <h2>QUEREMOS QUE TÚ SEAS PARTE DE ESTO</h2>
+        <h3>Conoce nuestras ideas</h3>
+    
+        <div class="flex justify-center p-16" data-layer="0">
+            <iframe width="920" height="518" src="https://www.youtube.com/embed/TwC3uO6SVWg" title="Las 4 propuestas de Julio Tovar y Adelante Perú" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </Container>
+
+   
+</section>
+
+<style>
+    section{
+        @apply flex;
+        padding: calc(10rem * var(--scale)) 0;
+    }
+
+    h2{
+        font-size:  calc(4.2rem *var(--scale));
+        font-weight: 700;
+        line-height: 100%;
+        margin-bottom: calc(2rem *var(--scale));
+    }
+
+    h3{
+        font-size:  calc(2.3rem *var(--scale));
+    }
+
+</style>
