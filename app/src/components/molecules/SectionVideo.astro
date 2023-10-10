@@ -1,0 +1,46 @@
+---
+import Container from "../globals/Container.astro";
+---
+
+<section class="sectionVideo">
+  <h2>CONOCIENDO A JULIO</h2>
+
+  <div class="flex justify-center p-16" data-layer="0">
+    <iframe
+      src="https://www.youtube.com/embed/TwC3uO6SVWg"
+      title="Las 4 propuestas de Julio Tovar y Adelante Perú"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</section>
+
+<style>
+  h2 {
+    font-size: calc(3.2rem * var(--scale));
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: calc(2rem * var(--scale));
+  }
+  .sectionVideo {
+    margin-bottom: calc(6rem * var(--scale));
+  }
+
+  div {
+    @apply mx-auto w-full h-[30rem];
+  }
+  iframe {
+    @apply h-full w-full;
+  }
+
+  @screen laptop {
+    div {
+      @apply mx-auto;
+      width: calc(100rem * var(--scale));
+      height: calc(51.8rem * var(--scale));
+    }
+    iframe {
+      @apply h-full w-full;
+    }
+  }
+</style>

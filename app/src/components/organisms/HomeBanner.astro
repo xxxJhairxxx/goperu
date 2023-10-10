@@ -5,35 +5,41 @@ import BannerTitle from "../molecules/BannerTitle.astro";
 import Slider from "../molecules/Slider.astro";
 ---
 
-
 <div class="HomeBanner">
-   
-   <Slider />
-    <Container class="ctn">
-      <BannerCard/>
-      <BannerTitle/>
-    </Container>
-    
-  
+  <Slider />
+  <Container class="ctn">
+    <BannerCard class:list={"md:block hidden"} />
+    <BannerTitle />
+  </Container>
 </div>
 
 <style>
-    .HomeBanner{
+  .HomeBanner {
+    @apply relative top-0 left-0 z-[-1];
+    padding-top: calc(12rem * var(--scale));
+    width: 100%;
+    height: 100vh;
+  }
+
+  .image {
+    @apply absolute z-[-1] top-0 left-0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  @screen laptop {
+    .HomeBanner {
       @apply relative top-0 left-0 z-[-1];
-        margin-top: calc(-21.5rem * var(--scale));
-        padding-top: calc(12rem * var(--scale));
-        width: 100%;
-        height: 100vh;
+      padding-top: calc(12rem * var(--scale));
+      width: 100%;
+      height: 100vh;
     }
 
-    .image{
+    .image {
       @apply absolute z-[-1] top-0 left-0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
     }
-
+  }
 </style>
-
-
-

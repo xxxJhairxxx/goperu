@@ -1,0 +1,29 @@
+---
+import Container from "../globals/Container.astro";
+import BannerCard from "./BannerCard.astro";
+import BannerTitle from "./BannerTitle.astro";
+import SectionVideo from "./SectionVideo.astro";
+---
+
+<div>
+  <Container
+    class:list={"flex md:items-center h-full md:flex-row flex-col gap-20"}
+  >
+    <BannerTitle class:list={["title"]} />
+    <BannerCard class:list={"z-[20]"} />
+  </Container>
+</div>
+
+<style>
+  div {
+    background-image: url("https://adelanteperu.com/wp-content/uploads/2023/07/julio-portada.jpeg");
+    @apply h-[100vh] w-full flex flex-col relative z-10 bg-cover;
+  }
+
+  @screen laptop {
+    div {
+      background-image: url("https://adelanteperu.com/wp-content/uploads/2023/07/julio-portada.jpeg");
+      @apply h-[100vh] w-full relative z-10;
+    }
+  }
+</style>

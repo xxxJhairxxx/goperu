@@ -2,112 +2,192 @@
 import Container from "../globals/Container.astro";
 
 interface redes {
-    logo: string;
-    url: string;
-    label:string;
+  logo: string;
+  url: string;
+  label: string;
 }
 
-const redes : Array<redes> = [
-    {logo: "https://www.edigitalagency.com.au/wp-content/uploads/facebook-icon-white-png.png",url:"https://www.facebook.com/adelanteperusisepuede",label :"facebook"},
-    {logo: "https://tmpfiles.nohat.cc/nohat.png",url:"https://www.instagram.com/",label :"instagram"},
-    {logo: "./../../images/youtube.png",url:"https://www.youtube.com/channel/UCPZoopiESkGq-qivtj0JTwg",label :"youtube"}
-]
-
+const redes: Array<redes> = [
+  {
+    logo: "https://www.edigitalagency.com.au/wp-content/uploads/facebook-icon-white-png.png",
+    url: "https://www.facebook.com/adelanteperusisepuede",
+    label: "facebook",
+  },
+  {
+    logo: "https://tmpfiles.nohat.cc/nohat.png",
+    url: "https://www.instagram.com/",
+    label: "instagram",
+  },
+  {
+    logo: "./../../images/youtube.png",
+    url: "https://www.youtube.com/channel/UCPZoopiESkGq-qivtj0JTwg",
+    label: "youtube",
+  },
+];
 ---
 
 <footer>
-    <Container class="ctn flex">
-            <div class="divleft">
-                <div class="thumb">
-                        <img src="https://adelanteperu.com/wp-content/uploads/2023/07/logo-footer.png" alt="">
-                </div>
+  <Container class="ctn flex md:flex-row flex-col gap-5">
+    <div class="divleft">
+      <div class="thumb">
+        <img
+          src="https://adelanteperu.com/wp-content/uploads/2023/07/logo-footer.png"
+          alt=""
+        />
+      </div>
 
-                <ul>
-                    <li>Dirección: Calle Los Canarios 114, Surquillo - Lima</li>
-                    <li>Mail: marketing@adelanteperu.com</li>
-                    <li>Cel: 995 287 805</li>
-                </ul>
-            </div>
+      <ul>
+        <li>Dirección: Calle Los Canarios 114, Surquillo - Lima</li>
+        <li>Mail: marketing@adelanteperu.com</li>
+        <li>Cel: 995 287 805</li>
+      </ul>
+    </div>
 
-            <div class="divright">
-                <h2>Encuéntranos en</h2>
-                <div class="redes"> {redes.map(({logo,url})=><a href={url}><img class="img" src={logo} alt=""/></a>)}</div>
-               <h2>Deseas ser parte del cambio, déjanos tu email aquí</h2>
-               <form action="">
-                <input type="text" placeholder="Coloca tu email aqui">
-                <input type="text" placeholder="Departamento" >
-                <input type="submit" value="ENVIAR">
-               </form>
-            </div>
+    <div class="divright">
+      <h2>Encuéntranos en</h2>
+      <div class="redes">
+        {
+          redes.map(({ logo, url }) => (
+            <a href={url}>
+              <img class="img" src={logo} alt="" />
+            </a>
+          ))
+        }
+      </div>
+      <h2>Deseas ser parte del cambio, déjanos tu email aquí</h2>
+      <form action="">
+        <input type="text" placeholder="Coloca tu email aqui" />
+        <input type="text" placeholder="Departamento" />
+        <input type="submit" value="ENVIAR" />
+      </form>
+    </div>
+  </Container>
 
-    </Container>
-
-</footer>
-
-<style>
-    footer{
-        @apply bg-[red] text-white ;
-        padding-top: calc(5rem * var(--scale)) ;
-        padding-bottom: calc(10rem * var(--scale)) ;
+  <style>
+    footer {
+      @apply bg-[red] text-white flex flex-col;
+      padding-top: 5rem;
+      padding-bottom: 10rem;
     }
-.divleft{
-    @apply flex flex-wrap items-end;
-    gap: calc(1.5rem * var(--scale));
-}
+    .divleft {
+      @apply flex flex-col items-center w-full;
+      gap: 0rem;
+    }
 
-    ul{
-        @apply flex font-[500];
-        
+    ul {
+      @apply flex flex-col font-[500] text-center;
+
+      font-size: 1.5rem;
+    }
+
+    li {
+      padding: 1rem;
+    }
+
+    .divright {
+      @apply text-center w-[100%] flex flex-col justify-center items-center;
+      font-size: 1.5rem;
+      gap: 1rem;
+    }
+
+    .redes {
+      @apply flex justify-end;
+      gap: calc(1.5rem * var(--scale));
+    }
+
+    .img {
+      @apply w-full h-full object-contain;
+    }
+
+    a {
+      @apply block;
+      height: calc(4rem * var(--scale));
+      width: calc(3rem * var(--scale));
+    }
+
+    h2 {
+      @apply font-[500];
+      width: 100%;
+    }
+    form {
+      @apply flex flex-col items-end w-[90%];
+
+      gap: 1rem;
+    }
+    input {
+      @apply w-full;
+    }
+    input[type="text"] {
+      padding: 1.2rem 2.5rem;
+    }
+    input[type="submit"] {
+      @apply font-[600];
+    }
+    @screen laptop {
+      footer {
+        @apply bg-[red] text-white flex-row;
+        padding-top: calc(10rem * var(--scale));
+        padding-bottom: calc(10rem * var(--scale));
+      }
+      .divleft {
+        @apply flex flex-row flex-wrap items-end;
+        gap: calc(1.5rem * var(--scale));
+      }
+
+      ul {
+        @apply flex-row font-[500];
+
         font-size: calc(1.5rem * var(--scale));
-    }
+      }
 
-    li{@apply border-r;
+      li {
+        @apply border-r;
         padding: 0 calc(2.5rem * var(--scale));
-    }
-    li:first-child{
+      }
+      li:first-child {
         @apply pl-0;
-    }
-    li:last-child{
-        @apply border-none
-    }
+      }
+      li:last-child {
+        @apply border-none;
+      }
 
-    .divright{
-        @apply text-right w-[30%] flex flex-col;
+      .divright {
+        @apply text-right w-[30%] flex flex-col items-end;
         font-size: calc(1.5rem * var(--scale));
         gap: calc(1.3rem * var(--scale));
         height: calc(20rem * var(--scale));
-    }
+      }
 
-    .redes{
+      .redes {
         @apply flex justify-end;
         gap: calc(1.5rem * var(--scale));
-    }
+      }
 
-
-    .img{
+      .img {
         @apply w-full h-full object-contain;
-    }
+      }
 
-    a{
+      a {
         @apply block;
         height: calc(4rem * var(--scale));
         width: calc(3rem * var(--scale));
-    }
+      }
 
-    h2{
+      h2 {
         @apply font-[500];
         width: 100%;
-    }
-    form{
+      }
+      form {
         @apply flex flex-col items-end;
 
-        gap:calc(1rem * var(--scale)) ;
-    }
-    input[type=text]{
-    
+        gap: calc(1rem * var(--scale));
+      }
+      input[type="text"] {
         padding: calc(1.2rem * var(--scale)) calc(2.5rem * var(--scale));
+      }
+      input[type="submit"] {
+        @apply font-[600];
+      }
     }
-    input[type=submit]{
-        @apply font-[600]
-    }
-</style>
+  </style>
+</footer>

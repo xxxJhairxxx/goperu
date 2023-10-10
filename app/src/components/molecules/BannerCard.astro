@@ -1,10 +1,14 @@
 ---
 import "./styles/BannerCard.css";
+
+const { class: className } = Astro.props;
 ---
 
-<div class="BannerCard">
-    <h3> COLABORA CON NOSOTROS</h3>
-    <p> <strong> No le debemos ni le deberemos nada a nadie.</strong> Ayúdanos a
+<div class:list={[className, "BannerCard"]}>
+  <h3>COLABORA CON NOSOTROS</h3>
+  <p>
+    <strong> No le debemos ni le deberemos nada a nadie.</strong> Ayúdanos a
     construir una manera distinta de financiar los nuevos partidos políticos.
-     Juntos lo podremos lograr.</p>
+    Juntos lo podremos lograr.
+  </p>
 </div>

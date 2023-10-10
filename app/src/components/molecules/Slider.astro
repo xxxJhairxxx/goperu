@@ -1,68 +1,86 @@
 ---
-
 const images = [
-    {
-      src: 'https://adelanteperu.com/wp-content/uploads/2023/07/slider-3.jpeg',
-      alt: 'Imagen 1',
-    },
-    {
-      src: 'https://adelanteperu.com/wp-content/uploads/2023/07/portada-4-adp.jpeg',
-      alt: 'Imagen 2',
-    },
-    {
-      src: 'https://adelanteperu.com/wp-content/uploads/2023/07/home-2.jpeg',
-      alt: 'Imagen 3',
-    },
-    {
-      src: 'https://adelanteperu.com/wp-content/uploads/2023/07/ventanilla-adp.jpeg',
-      alt: 'Imagen 4',
-    },
-  ];
+  {
+    src: "https://adelanteperu.com/wp-content/uploads/2023/07/slider-3.jpeg",
+    alt: "Imagen 1",
+  },
+  {
+    src: "https://adelanteperu.com/wp-content/uploads/2023/07/portada-4-adp.jpeg",
+    alt: "Imagen 2",
+  },
+  {
+    src: "https://adelanteperu.com/wp-content/uploads/2023/07/home-2.jpeg",
+    alt: "Imagen 3",
+  },
+  {
+    src: "https://adelanteperu.com/wp-content/uploads/2023/07/ventanilla-adp.jpeg",
+    alt: "Imagen 4",
+  },
+];
 ---
 
-
-
 <div>
-    <ul>
-        {images.map(({src,alt})=><li><img src={src} alt={alt} /></li>)}
-    </ul>
+  <ul>
+    {
+      images.map(({ src, alt }) => (
+        <li>
+          <img src={src} alt={alt} />
+        </li>
+      ))
+    }
+  </ul>
 </div>
 
 <style>
-    
-    div{
-        @apply absolute top-0 overflow-hidden z-[-1];
-        height: 100vh;
-        width: 100vw;
+  div {
+    @apply absolute  top-0 overflow-hidden z-[-1];
+    height: 100vh;
+    width: 100%;
+  }
 
+  ul {
+    display: flex;
+    padding: 0;
+    height: 100vh;
+    width: 400%;
+    animation: slider 28s infinite ease-in-out;
+  }
+
+  @keyframes slider {
+    0% {
+      margin-left: 0%;
+    }
+    20% {
+      margin-left: 0%;
     }
 
-
-
-    ul{
-        display: flex;
-        padding: 0;
-        height: 100vh;
-        width: 400vw;
-        animation: slider 28s infinite  ease-in-out;
+    25% {
+      margin-left: -100%;
+    }
+    45% {
+      margin-left: -100%;
     }
 
-    @keyframes slider{
-        0%{margin-left: 0%;}
-        20%{margin-left: 0%;}
-        
-        25%{margin-left: -100vw;}
-        45%{margin-left: -100vw;}
-
-        50%{margin-left: -200vw;}
-        70%{margin-left: -200vw;}
-
-        75%{margin-left: -300vw;}
-        95%{margin-left: -300vw;}
+    50% {
+      margin-left: -200%;
+    }
+    70% {
+      margin-left: -200%;
     }
 
-    img{
-        @apply w-[100vw] h-full object-cover;
+    75% {
+      margin-left: -300%;
     }
-    
+    95% {
+      margin-left: -300%;
+    }
+  }
+
+  li {
+    @apply w-full h-full;
+  }
+
+  img {
+    @apply w-full h-full object-cover;
+  }
 </style>

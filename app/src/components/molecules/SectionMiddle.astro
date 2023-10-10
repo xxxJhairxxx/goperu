@@ -1,0 +1,52 @@
+---
+import Container from "../globals/Container.astro";
+---
+
+<section>
+  <div>
+    EL PERÚ NOS NECESITA <span class="font-bold"
+      >PONGAMOS EL PECHO COMO VALIENTES Y RESCATEMOS A NUESTRO PAÍS DE LOS
+      POLÍTICOS TRADICIONALES¨</span
+    >
+  </div>
+
+  <div>
+    Emprendedor con más de 20 años de experiencia, ha liderado campañas de
+    marketing y publicidad para las principales empresas del país y ha logrado
+    exportar los servicios de su compañía a toda la región, convirtiéndose en la
+    única compañía de marketing peruana con presencia regional. Especializado en
+    Administración y Finanzas en ESAN, estudió marketing en Kellogg School of
+    Management – Chicago, cursó un MBA en INCAE/Adolfo Ibáñez y cuenta con un
+    máster en Innovación y Design Thinking en Massachusetts Institute of
+    Technology – MIT, Boston.
+  </div>
+</section>
+
+<style>
+  section {
+    @apply flex flex-col px-10 py-20 items-center gap-10 justify-between;
+  }
+  div:first-child {
+    @apply font-sans  leading-[110%];
+    font-size: calc(3.7rem * var(--scale));
+  }
+  div:last-child {
+    @apply w-[100%]  leading-[150%];
+    font-size: calc(2.1rem * var(--scale));
+  }
+
+  @screen laptop {
+    section {
+      @apply flex-row items-center justify-between;
+      padding: calc(20rem * var(--scale)) 0;
+    }
+    div:first-child {
+      @apply font-sans w-[45%]  leading-[110%];
+      font-size: calc(3.7rem * var(--scale));
+    }
+    div:last-child {
+      @apply w-[50%]  leading-[150%];
+      font-size: calc(2.1rem * var(--scale));
+    }
+  }
+</style>

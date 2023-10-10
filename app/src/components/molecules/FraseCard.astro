@@ -1,23 +1,31 @@
 ---
 import Container from "../globals/Container.astro";
-
 ---
 
+<div class="FraseCard">
+  <h2>
+    ¨Llegó el momento de construir juntos el Perú que merecemos¨ <h2></h2>
 
-
-    <div class="FraseCard">
-        <h2> ¨Llegó el momento de construir juntos el Perú que merecemos¨ <h2>
-        </div>
-
-<style>
-
-    .FraseCard{
+    <style>
+      .FraseCard {
         @apply mx-auto bg-[red] text-white leading-[100%] z-20 relative text-center font-[300];
-        padding: calc(5rem * var(--scale)) calc(4rem * var(--scale));
-        margin-top: calc(-9rem * var(--scale));
-        width:calc(80rem * var(--scale));
-        font-size: calc(3.5rem * var(--scale));
+        padding: 5rem;
+        margin-top: 0rem;
+        width: 100%;
+        font-size: 3.5rem;
         z-index: 100;
-    }
+      }
 
-</style>
+      @screen laptop {
+        .FraseCard {
+          @apply mx-auto bg-[red] text-white leading-[100%] z-20 relative text-center font-[300];
+          padding: calc(5rem * var(--scale)) calc(4rem * var(--scale));
+          margin-top: calc(-9rem * var(--scale));
+          width: calc(80rem * var(--scale));
+          font-size: calc(3.5rem * var(--scale));
+          z-index: 100;
+        }
+      }
+    </style>
+  </h2>
+</div>
