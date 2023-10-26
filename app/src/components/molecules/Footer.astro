@@ -31,7 +31,7 @@ const redes: Array<redes> = [
     <div class="divleft">
       <div class="thumb">
         <img
-          src="https://adelanteperu.com/wp-content/uploads/2023/07/logo-footer.png"
+          src="/images/tnlogo.png"
           alt=""
         />
       </div>
@@ -65,7 +65,7 @@ const redes: Array<redes> = [
 
   <style>
     footer {
-      @apply bg-[red] text-white flex flex-col;
+      @apply bg-[#1c3a9d] text-white flex flex-col;
       padding-top: 5rem;
       padding-bottom: 10rem;
     }
@@ -93,6 +93,11 @@ const redes: Array<redes> = [
     .redes {
       @apply flex justify-end;
       gap: calc(1.5rem * var(--scale));
+    }
+
+    .thumb{
+      height: calc(18rem * var(--scale));
+      width: calc(18rem * var(--scale));
     }
 
     .img {
@@ -125,7 +130,7 @@ const redes: Array<redes> = [
     }
     @screen laptop {
       footer {
-        @apply bg-[red] text-white flex-row;
+        @apply  text-white flex-row;
         padding-top: calc(10rem * var(--scale));
         padding-bottom: calc(10rem * var(--scale));
       }

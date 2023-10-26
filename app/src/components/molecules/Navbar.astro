@@ -10,7 +10,7 @@ import Container from "../globals/Container.astro";
     <div class="logo">
       <img
         class="image"
-        src="https://adelanteperu.com/wp-content/uploads/2023/07/logo-adp.svg"
+        src="/images/tnlogo.png"
         alt=""
       />
     </div>
@@ -31,6 +31,7 @@ import Container from "../globals/Container.astro";
   btn &&
     btn.addEventListener("click", () => {
       document.querySelector(".Navbar")?.classList.toggle("!translate-x-[0%]");
+      document.querySelector("body")?.classList.toggle("overflow-y-hidden");
       const array: NodeListOf<Element> = document.querySelectorAll(".btn span");
       array.forEach((item: any) => item.classList.toggle("!bg-black"));
     });
@@ -38,14 +39,14 @@ import Container from "../globals/Container.astro";
 
 <style>
   button {
-    @apply w-[4.6rem] px-[1rem] h-[5rem] flex flex-col justify-center gap-3  absolute z-[150]  top-20 right-10;
+    @apply w-[4.6rem] px-[1rem] h-[5rem] flex flex-col justify-center gap-3  absolute z-[550]  top-20 right-10;
   }
   span {
     @apply block h-[0.3rem] w-full bg-white  rounded-lg;
     transition: background-color 1s ease-in-out;
   }
   .Navbar {
-    @apply fixed z-[100] flex flex-col  justify-center w-full h-full bg-white;
+    @apply fixed z-[450] flex flex-col  justify-center w-full h-full bg-white;
     transform: translateX(100%);
     transition: transform 0.7s ease-in-out;
     list-style: none;
