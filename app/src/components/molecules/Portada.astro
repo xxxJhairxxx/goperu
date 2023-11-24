@@ -3,26 +3,40 @@ import Container from "../globals/Container.astro";
 import BannerCard from "./BannerCard.astro";
 import BannerTitle from "./BannerTitle.astro";
 import SectionVideo from "./SectionVideo.astro";
+
+interface Props {
+  urlPortada?: string;
+  titlePortada?: string;
+  subtitlePortada?: string;
+}
+
+const { urlPortada, titlePortada, subtitlePortada } = Astro.props;
 ---
 
-<div>
+<div
+  style={{
+    backgroundImage: `url(${urlPortada})`,
+  }}
+>
   <Container
     class:list={"flex md:items-center h-full md:flex-row flex-col gap-20"}
   >
-    <BannerTitle class:list={["title"]} />
+    <BannerTitle
+      title={titlePortada}
+      subtitle={subtitlePortada}
+      class={"title"}
+    />
     <BannerCard class:list={"z-[20]"} />
   </Container>
 </div>
 
 <style>
   div {
-    background-image: url("https://adelanteperu.com/wp-content/uploads/2023/07/julio-portada.jpeg");
-    @apply h-[100vh] w-full flex flex-col relative z-10 bg-cover;
+    @apply h-[100vh] w-full flex flex-col relative z-10 bg-cover bg-black;
   }
 
   @screen laptop {
     div {
-      background-image: url("https://adelanteperu.com/wp-content/uploads/2023/07/julio-portada.jpeg");
       @apply h-[100vh] w-full relative z-10;
     }
   }

@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HomeBanner from "../components/organisms/HomeBanner.astro";
+import FraseCard from "../components/molecules/FraseCard.astro";
+import HomeMiddle from "../components/organisms/HomeMiddle.astro";
+import HomeQueremos from "../components/organisms/HomeQueremos.astro";
+import BannerCard from "../components/molecules/BannerCard.astro";
+import BannerTitle from "../components/molecules/BannerTitle.astro";
+import Container from "../components/globals/Container.astro";
+import Portada from "../components/molecules/Portada.astro";
+import SectionMiddle from "../components/molecules/SectionMiddle.astro";
+import SectionVideo from "../components/molecules/SectionVideo.astro";
+---
+
+<Layout title="Es momento de involucranos">
+  <Portada
+    urlPortada="https://scontent.flim38-1.fna.fbcdn.net/v/t39.30808-6/370340822_630555299260538_6980426982748583253_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH6StaGcaKG4wYQhED64jE1qtwOB66X-vGq3A4Hrpf68UsncYkQUaAFyU6vaOkt3ZU&_nc_ohc=EN21WGQpvHQAX8YtVcU&_nc_ht=scontent.flim38-1.fna&oh=00_AfDUe08YbNT_tP7KBe7LW9fRtbJ54hSpojvN1seW6Ir9hA&oe=65655B35"
+    titlePortada="Equipo"
+    subtitlePortada="Quienes Somos"
+  />
+  <Container>
+    <article>
+      <img
+        src="https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg"
+        alt=""
+      />
+      <h1>Alex Ubago</h1>
+    </article>
+    <article>
+      <img
+        src='https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg"'
+        alt=""
+      />
+      <h1>Alex Ubago</h1>
+    </article>
+    <article>
+      <img
+        src="https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg"
+        alt=""
+      />
+      <h1>Alex Ubago</h1>
+    </article>
+    <article>
+      <img
+        src='https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg"'
+        alt=""
+      />
+      <h1>Alex Ubago</h1>
+    </article>
+  </Container>
+</Layout>
+
+<style is:global>
+  @import "../styles/globals.css";
+  @import "../styles/scale.css";
+
+  article {
+    @apply relative w-[30rem] h-[30rem] flex;
+    transition: all 0.4s ease-in-out;
+  }
+
+  article:hover > img {
+    filter: grayscale(100%);
+  }
+
+  article > img {
+    @apply absolute w-full h-full object-cover z-[-1];
+  }
+  article:hover > h1 {
+    @apply opacity-100;
+    transition: all 0.4s ease-in-out;
+  }
+
+  article > h1 {
+    @apply mx-auto opacity-0 text-white font-semibold self-end mb-10 border-2 bg-black/40 border-white w-fit px-5 py-2;
+  }
+</style>

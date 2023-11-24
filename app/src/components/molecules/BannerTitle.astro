@@ -1,23 +1,36 @@
 ---
-const { class: className } = Astro.props;
+interface Props {
+  class: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  class: className,
+  title = "Nuevos rostros. Nuevas ideas. Nueva Política.",
+  subtitle = "Dile Adiós <br /> al Floro",
+} = Astro.props;
 ---
 
 <div class:list={["BannerTitle", className]}>
-  <h2>Nuevos rostros. Nuevas ideas. Nueva Política.</h2>
+  <h2>{title}</h2>
 
-  <h1>Dile Adiós <br /> al Floro</h1>
+  <h1 set:html={subtitle} />
 </div>
 
 <style>
   .BannerTitle {
     @apply text-white;
+
     padding-top: 70%;
   }
   h2 {
     @apply font-[700] text-[2rem];
+    text-shadow: 0px 0px 20px black;
   }
   h1 {
     @apply font-[700] leading-[100%] text-[6rem];
+    text-shadow: 0px 0px 20px black;
   }
 
   @screen laptop {
