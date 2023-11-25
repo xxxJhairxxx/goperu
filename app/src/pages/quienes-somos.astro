@@ -10,6 +10,49 @@ import Container from "../components/globals/Container.astro";
 import Portada from "../components/molecules/Portada.astro";
 import SectionMiddle from "../components/molecules/SectionMiddle.astro";
 import SectionVideo from "../components/molecules/SectionVideo.astro";
+
+const miembroEquipo = [
+  {
+    nombre: "angel pino",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg",
+  },
+  {
+    nombre: "antonio grande",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg",
+  },
+  {
+    nombre: "arnaldo aguirre",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/arnaldo-aguirre.jpeg",
+  },
+  {
+    nombre: "aureo zegarra",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/fabiola-alvino.jpeg",
+  },
+  {
+    nombre: "fabiola alvino",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg",
+  },
+  {
+    nombre: "Alex Ubago",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg",
+  },
+  {
+    nombre: "Alex Ubago",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/arnaldo-aguirre.jpeg",
+  },
+  {
+    nombre: "Alex Ubago",
+    imgUrl:
+      "https://adelanteperu.com/wp-content/uploads/2023/07/fabiola-alvino.jpeg",
+  },
+];
 ---
 
 <Layout title="Es momento de involucranos">
@@ -18,35 +61,30 @@ import SectionVideo from "../components/molecules/SectionVideo.astro";
     titlePortada="Equipo"
     subtitlePortada="Quienes Somos"
   />
-  <Container>
-    <article>
-      <img
-        src="https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg"
-        alt=""
-      />
-      <h1>Alex Ubago</h1>
-    </article>
-    <article>
-      <img
-        src='https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg"'
-        alt=""
-      />
-      <h1>Alex Ubago</h1>
-    </article>
-    <article>
-      <img
-        src="https://adelanteperu.com/wp-content/uploads/2023/07/angel-pino.jpeg"
-        alt=""
-      />
-      <h1>Alex Ubago</h1>
-    </article>
-    <article>
-      <img
-        src='https://adelanteperu.com/wp-content/uploads/2023/07/antonio-grande.jpeg"'
-        alt=""
-      />
-      <h1>Alex Ubago</h1>
-    </article>
+  <Container class:list={"about-ctn"}>
+    {
+      miembroEquipo.slice(0, 4).map(({ nombre, imgUrl }) => (
+        <article>
+          <img src={imgUrl} alt="" />
+          <h1>{nombre}</h1>
+        </article>
+      ))
+    }
+    <section class="middle">
+      <h2>¨LLEGO EL MOMENTO DE RENOVAR¨</h2>
+      <p>
+        Porque no creemos en los políticos tradicionales hemos formado nuevos
+        equipos. Hagamos juntos una nueva política.
+      </p>
+    </section>
+    {
+      miembroEquipo.map(({ nombre, imgUrl }) => (
+        <article>
+          <img src={imgUrl} alt="" />
+          <h1>{nombre}</h1>
+        </article>
+      ))
+    }
   </Container>
 </Layout>
 
@@ -54,17 +92,22 @@ import SectionVideo from "../components/molecules/SectionVideo.astro";
   @import "../styles/globals.css";
   @import "../styles/scale.css";
 
+  .about-ctn {
+    @apply flex flex-col justify-center items-center gap-10 py-10;
+  }
+
   article {
-    @apply relative w-[30rem] h-[30rem] flex;
+    @apply relative w-[80%] h-[30rem] flex cursor-default;
     transition: all 0.4s ease-in-out;
   }
 
   article:hover > img {
-    filter: grayscale(100%);
+    filter: grayscale(0%);
   }
 
   article > img {
     @apply absolute w-full h-full object-cover z-[-1];
+    filter: grayscale(100%);
   }
   article:hover > h1 {
     @apply opacity-100;
@@ -73,5 +116,29 @@ import SectionVideo from "../components/molecules/SectionVideo.astro";
 
   article > h1 {
     @apply mx-auto opacity-0 text-white font-semibold self-end mb-10 border-2 bg-black/40 border-white w-fit px-5 py-2;
+  }
+
+  .middle {
+    @apply mx-auto bg-[#1c3a9d] text-white leading-[100%] z-20 relative text-center font-[300];
+    padding: 5rem;
+    margin-top: 0rem;
+    width: 100%;
+    font-size: 3.5rem;
+    z-index: 100;
+  }
+
+  @screen laptop {
+    .about-ctn {
+      @apply grid grid-cols-4;
+    }
+
+    .middle {
+      @apply mx-auto col-span-4  text-white leading-[100%] z-20 relative text-center font-[300];
+      padding: calc(5rem * var(--scale)) calc(4rem * var(--scale));
+
+      width: calc(80rem * var(--scale));
+      font-size: calc(3.5rem * var(--scale));
+      z-index: 100;
+    }
   }
 </style>
